@@ -1,0 +1,734 @@
+{
+  "StartedUtc": "2026-10-26T03:34:12.7397109+00:00",
+  "FinishedUtc": "2026-10-26T03:39:17.0609908+00:00",
+  "Options": {
+    "Root": "E:\\NewScope",
+    "Output": "E:\\NewScope\\dist\\stress\\final\\live.json",
+    "Channels": [
+      256
+    ],
+    "DurationSeconds": 300,
+    "Frames": 60,
+    "UiOnly": true
+  },
+  "ProcessorCount": 32,
+  "Framework": ".NET 10.0.12",
+  "OS": "Microsoft Windows 10.0.26300",
+  "UiHashes": {
+    "src/NewScope/App.axaml": "18074294B0DBF1766BEBBD82B2999542CB14F00D31CEB2C046B7FA9DA5E61955",
+    "src/NewScope/Views/MainWindow.axaml": "53C4C673229993597CC9C460CE71D988683F105BFBBC7FA26028FC7D3E77F930",
+    "src/NewScope/Services/Localization.cs": "36B42C2BE368855C30498F4AF1A37C45581B4B426371CD9780315750ECC9F9EF",
+    "src/NewScope/Assets/newscope.ico": "130FF6E1721210BCF2EA46D0300820D2941166D96089D8F16BD39D4CDBFADE34",
+    "src/NewScope/Assets/newscope.png": "4D2175D83BFCCC8C4CB4C4A001A727C32E92C43D68E3A023F3D40C510F899616"
+  },
+  "UiUnchanged": true,
+  "Results": [
+    {
+      "Kind": "live-ui",
+      "Channels": 256,
+      "RequestedHz": 2000,
+      "DurationSeconds": 300.0241669,
+      "Frames": 600051,
+      "ActualHz": 2000.00888661746,
+      "UiHeartbeat": {
+        "Count": 9859,
+        "P50Ms": 29.136700000002747,
+        "P95Ms": 47.64559999998892,
+        "MaxMs": 572.9312
+      },
+      "Inputs": {
+        "Count": 5640,
+        "P50Ms": 0.0284,
+        "P95Ms": 0.096,
+        "MaxMs": 7.8107
+      },
+      "Iterations": 5640,
+      "MaxAcquisitionGapMs": 103.0611,
+      "CpuCoreEquivalents": 1.1185036474473415,
+      "AllocatedMiBPerSecond": 7.170602807883197,
+      "GcCollections": [
+        41,
+        41,
+        4
+      ],
+      "Memory": [
+        {
+          "Seconds": 0.0128774,
+          "Metrics": {
+            "ManagedMiB": 596.2734298706055,
+            "PrivateMiB": 1070.37890625,
+            "WorkingSetMiB": 1084.1796875,
+            "GcCommittedMiB": 713.91015625,
+            "FragmentedMiB": 143.55735778808594
+          },
+          "Frames": 58
+        },
+        {
+          "Seconds": 5.010497,
+          "Metrics": {
+            "ManagedMiB": 612.8759078979492,
+            "PrivateMiB": 1268.19140625,
+            "WorkingSetMiB": 1319.2578125,
+            "GcCommittedMiB": 755.23828125,
+            "FragmentedMiB": 164.66307830810547
+          },
+          "Frames": 10065
+        },
+        {
+          "Seconds": 10.0289577,
+          "Metrics": {
+            "ManagedMiB": 616.755256652832,
+            "PrivateMiB": 2509.5390625,
+            "WorkingSetMiB": 2497.2734375,
+            "GcCommittedMiB": 813.91015625,
+            "FragmentedMiB": 138.61515045166016
+          },
+          "Frames": 20085
+        },
+        {
+          "Seconds": 15.045003,
+          "Metrics": {
+            "ManagedMiB": 649.3693923950195,
+            "PrivateMiB": 2563.0859375,
+            "WorkingSetMiB": 2597.17578125,
+            "GcCommittedMiB": 813.91015625,
+            "FragmentedMiB": 138.61515045166016
+          },
+          "Frames": 30114
+        },
+        {
+          "Seconds": 20.0329314,
+          "Metrics": {
+            "ManagedMiB": 635.6868591308594,
+            "PrivateMiB": 2910.91796875,
+            "WorkingSetMiB": 2828.57421875,
+            "GcCommittedMiB": 813.91015625,
+            "FragmentedMiB": 138.3961639404297
+          },
+          "Frames": 40090
+        },
+        {
+          "Seconds": 25.0150865,
+          "Metrics": {
+            "ManagedMiB": 998.6267013549805,
+            "PrivateMiB": 2953.46484375,
+            "WorkingSetMiB": 2980.87109375,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 72.47792053222656
+          },
+          "Frames": 50056
+        },
+        {
+          "Seconds": 30.0023066,
+          "Metrics": {
+            "ManagedMiB": 1033.630615234375,
+            "PrivateMiB": 3003.71875,
+            "WorkingSetMiB": 3031.390625,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 72.47792053222656
+          },
+          "Frames": 60052
+        },
+        {
+          "Seconds": 35.014023,
+          "Metrics": {
+            "ManagedMiB": 1005.4530563354492,
+            "PrivateMiB": 2808.296875,
+            "WorkingSetMiB": 2838.953125,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 72.09342956542969
+          },
+          "Frames": 70059
+        },
+        {
+          "Seconds": 40.0463398,
+          "Metrics": {
+            "ManagedMiB": 1005.6895217895508,
+            "PrivateMiB": 2853.15625,
+            "WorkingSetMiB": 2877.1328125,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 71.87297821044922
+          },
+          "Frames": 80112
+        },
+        {
+          "Seconds": 45.0438641,
+          "Metrics": {
+            "ManagedMiB": 1004.0524063110352,
+            "PrivateMiB": 2834.42578125,
+            "WorkingSetMiB": 2863.078125,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 71.2330322265625
+          },
+          "Frames": 90112
+        },
+        {
+          "Seconds": 50.0363246,
+          "Metrics": {
+            "ManagedMiB": 1037.3181686401367,
+            "PrivateMiB": 2920.8828125,
+            "WorkingSetMiB": 2952.8203125,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 71.2330322265625
+          },
+          "Frames": 100103
+        },
+        {
+          "Seconds": 55.0389259,
+          "Metrics": {
+            "ManagedMiB": 1028.0811233520508,
+            "PrivateMiB": 2875.3828125,
+            "WorkingSetMiB": 2898.10546875,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 71.17327117919922
+          },
+          "Frames": 110104
+        },
+        {
+          "Seconds": 60.0194252,
+          "Metrics": {
+            "ManagedMiB": 1011.7030487060547,
+            "PrivateMiB": 2862.76171875,
+            "WorkingSetMiB": 2890.38671875,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 71.17144012451172
+          },
+          "Frames": 120064
+        },
+        {
+          "Seconds": 65.061382,
+          "Metrics": {
+            "ManagedMiB": 1035.3541107177734,
+            "PrivateMiB": 2910.26953125,
+            "WorkingSetMiB": 2943.42578125,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 71.17144012451172
+          },
+          "Frames": 130149
+        },
+        {
+          "Seconds": 70.0413055,
+          "Metrics": {
+            "ManagedMiB": 1022.5155181884766,
+            "PrivateMiB": 2841.5390625,
+            "WorkingSetMiB": 2869.13671875,
+            "GcCommittedMiB": 1126.90625,
+            "FragmentedMiB": 71.0316162109375
+          },
+          "Frames": 140108
+        },
+        {
+          "Seconds": 75.0451209,
+          "Metrics": {
+            "ManagedMiB": 1006.6851119995117,
+            "PrivateMiB": 2915.2109375,
+            "WorkingSetMiB": 2920.11328125,
+            "GcCommittedMiB": 1130.90625,
+            "FragmentedMiB": 71.04177856445312
+          },
+          "Frames": 150139
+        },
+        {
+          "Seconds": 80.0080984,
+          "Metrics": {
+            "ManagedMiB": 1035.6027221679688,
+            "PrivateMiB": 2915.9609375,
+            "WorkingSetMiB": 2943.9453125,
+            "GcCommittedMiB": 1130.90625,
+            "FragmentedMiB": 71.04177856445312
+          },
+          "Frames": 160043
+        },
+        {
+          "Seconds": 85.0193244,
+          "Metrics": {
+            "ManagedMiB": 1018.8342742919922,
+            "PrivateMiB": 2858.80859375,
+            "WorkingSetMiB": 2883.28125,
+            "GcCommittedMiB": 1130.96875,
+            "FragmentedMiB": 70.8758544921875
+          },
+          "Frames": 170068
+        },
+        {
+          "Seconds": 90.0127572,
+          "Metrics": {
+            "ManagedMiB": 1050.9116897583008,
+            "PrivateMiB": 2909.11328125,
+            "WorkingSetMiB": 2906.4296875,
+            "GcCommittedMiB": 1130.96875,
+            "FragmentedMiB": 70.8758544921875
+          },
+          "Frames": 180052
+        },
+        {
+          "Seconds": 95.0029642,
+          "Metrics": {
+            "ManagedMiB": 1033.8851165771484,
+            "PrivateMiB": 3002.73046875,
+            "WorkingSetMiB": 3035.97265625,
+            "GcCommittedMiB": 1134.90234375,
+            "FragmentedMiB": 70.88230895996094
+          },
+          "Frames": 190025
+        },
+        {
+          "Seconds": 100.0064278,
+          "Metrics": {
+            "ManagedMiB": 1015.0638656616211,
+            "PrivateMiB": 2928.01953125,
+            "WorkingSetMiB": 2961.9765625,
+            "GcCommittedMiB": 1134.90625,
+            "FragmentedMiB": 70.67854309082031
+          },
+          "Frames": 200042
+        },
+        {
+          "Seconds": 105.0051986,
+          "Metrics": {
+            "ManagedMiB": 1049.635009765625,
+            "PrivateMiB": 2935.30859375,
+            "WorkingSetMiB": 2931.2734375,
+            "GcCommittedMiB": 1134.90625,
+            "FragmentedMiB": 70.67854309082031
+          },
+          "Frames": 210036
+        },
+        {
+          "Seconds": 110.0049836,
+          "Metrics": {
+            "ManagedMiB": 1030.4074935913086,
+            "PrivateMiB": 2892.58203125,
+            "WorkingSetMiB": 2918.703125,
+            "GcCommittedMiB": 1138.90234375,
+            "FragmentedMiB": 70.68737030029297
+          },
+          "Frames": 220035
+        },
+        {
+          "Seconds": 115.0134198,
+          "Metrics": {
+            "ManagedMiB": 1057.7083129882812,
+            "PrivateMiB": 2938.5546875,
+            "WorkingSetMiB": 2969.3515625,
+            "GcCommittedMiB": 1138.90234375,
+            "FragmentedMiB": 70.68737030029297
+          },
+          "Frames": 230050
+        },
+        {
+          "Seconds": 120.028577,
+          "Metrics": {
+            "ManagedMiB": 631.2564926147461,
+            "PrivateMiB": 2873.28515625,
+            "WorkingSetMiB": 2900.78125,
+            "GcCommittedMiB": 1120.6953125,
+            "FragmentedMiB": 165.05628204345703
+          },
+          "Frames": 240081
+        },
+        {
+          "Seconds": 125.0164338,
+          "Metrics": {
+            "ManagedMiB": 614.5972442626953,
+            "PrivateMiB": 2928.65625,
+            "WorkingSetMiB": 2962.41015625,
+            "GcCommittedMiB": 1124.5703125,
+            "FragmentedMiB": 162.60173797607422
+          },
+          "Frames": 250060
+        },
+        {
+          "Seconds": 130.0109185,
+          "Metrics": {
+            "ManagedMiB": 644.0458679199219,
+            "PrivateMiB": 2923.18359375,
+            "WorkingSetMiB": 2958.45703125,
+            "GcCommittedMiB": 1124.5703125,
+            "FragmentedMiB": 162.60173797607422
+          },
+          "Frames": 260047
+        },
+        {
+          "Seconds": 135.0035464,
+          "Metrics": {
+            "ManagedMiB": 627.0858612060547,
+            "PrivateMiB": 2874.8984375,
+            "WorkingSetMiB": 2904.15234375,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 160.29877471923828
+          },
+          "Frames": 270030
+        },
+        {
+          "Seconds": 140.0121182,
+          "Metrics": {
+            "ManagedMiB": 652.7523498535156,
+            "PrivateMiB": 2925.16015625,
+            "WorkingSetMiB": 2957.296875,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 160.29877471923828
+          },
+          "Frames": 280070
+        },
+        {
+          "Seconds": 145.0141542,
+          "Metrics": {
+            "ManagedMiB": 637.0466995239258,
+            "PrivateMiB": 2927.2734375,
+            "WorkingSetMiB": 2959.48828125,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 158.10314178466797
+          },
+          "Frames": 290051
+        },
+        {
+          "Seconds": 150.0371625,
+          "Metrics": {
+            "ManagedMiB": 616.838508605957,
+            "PrivateMiB": 2959.34765625,
+            "WorkingSetMiB": 2993.6015625,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 155.92542266845703
+          },
+          "Frames": 300118
+        },
+        {
+          "Seconds": 155.0179716,
+          "Metrics": {
+            "ManagedMiB": 644.589973449707,
+            "PrivateMiB": 2925.140625,
+            "WorkingSetMiB": 2959.47265625,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 155.92542266845703
+          },
+          "Frames": 310063
+        },
+        {
+          "Seconds": 160.0037743,
+          "Metrics": {
+            "ManagedMiB": 627.1977310180664,
+            "PrivateMiB": 2866.2109375,
+            "WorkingSetMiB": 2886.9765625,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 153.81299591064453
+          },
+          "Frames": 320033
+        },
+        {
+          "Seconds": 165.0048825,
+          "Metrics": {
+            "ManagedMiB": 651.1654510498047,
+            "PrivateMiB": 2927.84765625,
+            "WorkingSetMiB": 2959.3203125,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 153.81299591064453
+          },
+          "Frames": 330037
+        },
+        {
+          "Seconds": 170.0127555,
+          "Metrics": {
+            "ManagedMiB": 629.9784698486328,
+            "PrivateMiB": 2856.69921875,
+            "WorkingSetMiB": 2886.4765625,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 151.68414306640625
+          },
+          "Frames": 340051
+        },
+        {
+          "Seconds": 175.0418311,
+          "Metrics": {
+            "ManagedMiB": 660.7666168212891,
+            "PrivateMiB": 2921.12109375,
+            "WorkingSetMiB": 2953.58984375,
+            "GcCommittedMiB": 1124.6953125,
+            "FragmentedMiB": 151.68414306640625
+          },
+          "Frames": 350108
+        },
+        {
+          "Seconds": 180.0112626,
+          "Metrics": {
+            "ManagedMiB": 637.4343490600586,
+            "PrivateMiB": 2970.63671875,
+            "WorkingSetMiB": 3005.328125,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 149.5820083618164
+          },
+          "Frames": 360067
+        },
+        {
+          "Seconds": 185.0429229,
+          "Metrics": {
+            "ManagedMiB": 664.8060455322266,
+            "PrivateMiB": 2900.3359375,
+            "WorkingSetMiB": 2935.6328125,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 149.5820083618164
+          },
+          "Frames": 370112
+        },
+        {
+          "Seconds": 190.0273553,
+          "Metrics": {
+            "ManagedMiB": 641.4223022460938,
+            "PrivateMiB": 2896.4375,
+            "WorkingSetMiB": 2923.51171875,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 147.41350555419922
+          },
+          "Frames": 380081
+        },
+        {
+          "Seconds": 195.0375672,
+          "Metrics": {
+            "ManagedMiB": 626.0904083251953,
+            "PrivateMiB": 2877.796875,
+            "WorkingSetMiB": 2910.10546875,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 145.26377868652344
+          },
+          "Frames": 390100
+        },
+        {
+          "Seconds": 200.0438012,
+          "Metrics": {
+            "ManagedMiB": 651.6087265014648,
+            "PrivateMiB": 2912.5859375,
+            "WorkingSetMiB": 2950.27734375,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 145.26377868652344
+          },
+          "Frames": 400112
+        },
+        {
+          "Seconds": 205.036149,
+          "Metrics": {
+            "ManagedMiB": 632.3440017700195,
+            "PrivateMiB": 2916.6953125,
+            "WorkingSetMiB": 2935.2421875,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 143.0544662475586
+          },
+          "Frames": 410096
+        },
+        {
+          "Seconds": 210.0275283,
+          "Metrics": {
+            "ManagedMiB": 660.0933532714844,
+            "PrivateMiB": 3117.07421875,
+            "WorkingSetMiB": 3113.3125,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 143.0544662475586
+          },
+          "Frames": 420096
+        },
+        {
+          "Seconds": 215.00857,
+          "Metrics": {
+            "ManagedMiB": 637.229850769043,
+            "PrivateMiB": 2965.6171875,
+            "WorkingSetMiB": 3001.828125,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 140.93386840820312
+          },
+          "Frames": 430061
+        },
+        {
+          "Seconds": 220.0073242,
+          "Metrics": {
+            "ManagedMiB": 664.9375305175781,
+            "PrivateMiB": 2907.578125,
+            "WorkingSetMiB": 2945.72265625,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 140.93386840820312
+          },
+          "Frames": 440041
+        },
+        {
+          "Seconds": 225.0261195,
+          "Metrics": {
+            "ManagedMiB": 644.49853515625,
+            "PrivateMiB": 2890.1796875,
+            "WorkingSetMiB": 2927.98828125,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 138.7017593383789
+          },
+          "Frames": 450073
+        },
+        {
+          "Seconds": 230.0278322,
+          "Metrics": {
+            "ManagedMiB": 671.9011154174805,
+            "PrivateMiB": 2941.50390625,
+            "WorkingSetMiB": 2980.62109375,
+            "GcCommittedMiB": 1124.7578125,
+            "FragmentedMiB": 138.7017593383789
+          },
+          "Frames": 460084
+        },
+        {
+          "Seconds": 235.0619539,
+          "Metrics": {
+            "ManagedMiB": 654.8709106445312,
+            "PrivateMiB": 2908.49609375,
+            "WorkingSetMiB": 2948.6015625,
+            "GcCommittedMiB": 1126.40234375,
+            "FragmentedMiB": 138.64712524414062
+          },
+          "Frames": 470148
+        },
+        {
+          "Seconds": 240.0191381,
+          "Metrics": {
+            "ManagedMiB": 636.1345367431641,
+            "PrivateMiB": 2857.4921875,
+            "WorkingSetMiB": 2895.45703125,
+            "GcCommittedMiB": 1128.08203125,
+            "FragmentedMiB": 138.65272521972656
+          },
+          "Frames": 480062
+        },
+        {
+          "Seconds": 245.0203236,
+          "Metrics": {
+            "ManagedMiB": 666.1737289428711,
+            "PrivateMiB": 2920.0703125,
+            "WorkingSetMiB": 2955.4921875,
+            "GcCommittedMiB": 1128.08203125,
+            "FragmentedMiB": 138.65272521972656
+          },
+          "Frames": 490066
+        },
+        {
+          "Seconds": 250.0302505,
+          "Metrics": {
+            "ManagedMiB": 646.9260330200195,
+            "PrivateMiB": 2891.7734375,
+            "WorkingSetMiB": 2928.44140625,
+            "GcCommittedMiB": 1130.20703125,
+            "FragmentedMiB": 138.64752197265625
+          },
+          "Frames": 500085
+        },
+        {
+          "Seconds": 255.035731,
+          "Metrics": {
+            "ManagedMiB": 673.8305130004883,
+            "PrivateMiB": 2945.11328125,
+            "WorkingSetMiB": 2981.203125,
+            "GcCommittedMiB": 1130.20703125,
+            "FragmentedMiB": 138.64752197265625
+          },
+          "Frames": 510096
+        },
+        {
+          "Seconds": 260.0289454,
+          "Metrics": {
+            "ManagedMiB": 655.4763488769531,
+            "PrivateMiB": 2953.76171875,
+            "WorkingSetMiB": 2993.88671875,
+            "GcCommittedMiB": 1130.27734375,
+            "FragmentedMiB": 138.0467071533203
+          },
+          "Frames": 520084
+        },
+        {
+          "Seconds": 265.0206878,
+          "Metrics": {
+            "ManagedMiB": 681.018440246582,
+            "PrivateMiB": 2961.76171875,
+            "WorkingSetMiB": 3003,
+            "GcCommittedMiB": 1130.27734375,
+            "FragmentedMiB": 138.0467071533203
+          },
+          "Frames": 530069
+        },
+        {
+          "Seconds": 270.025942,
+          "Metrics": {
+            "ManagedMiB": 663.0582504272461,
+            "PrivateMiB": 2914.57421875,
+            "WorkingSetMiB": 2951.69140625,
+            "GcCommittedMiB": 1134.21484375,
+            "FragmentedMiB": 138.04601287841797
+          },
+          "Frames": 540077
+        },
+        {
+          "Seconds": 275.027837,
+          "Metrics": {
+            "ManagedMiB": 646.4183654785156,
+            "PrivateMiB": 2878.82421875,
+            "WorkingSetMiB": 2911.69921875,
+            "GcCommittedMiB": 1134.21484375,
+            "FragmentedMiB": 137.62129974365234
+          },
+          "Frames": 550085
+        },
+        {
+          "Seconds": 280.0142843,
+          "Metrics": {
+            "ManagedMiB": 671.0246658325195,
+            "PrivateMiB": 2927.12890625,
+            "WorkingSetMiB": 2963.203125,
+            "GcCommittedMiB": 1134.21484375,
+            "FragmentedMiB": 137.62129974365234
+          },
+          "Frames": 560055
+        },
+        {
+          "Seconds": 285.0355708,
+          "Metrics": {
+            "ManagedMiB": 651.8440246582031,
+            "PrivateMiB": 2860.3984375,
+            "WorkingSetMiB": 2894.84765625,
+            "GcCommittedMiB": 1138.21484375,
+            "FragmentedMiB": 137.6180877685547
+          },
+          "Frames": 570101
+        },
+        {
+          "Seconds": 290.0323153,
+          "Metrics": {
+            "ManagedMiB": 677.6678237915039,
+            "PrivateMiB": 2939.26171875,
+            "WorkingSetMiB": 2958.29296875,
+            "GcCommittedMiB": 1138.21484375,
+            "FragmentedMiB": 137.6180877685547
+          },
+          "Frames": 580090
+        },
+        {
+          "Seconds": 295.0345589,
+          "Metrics": {
+            "ManagedMiB": 659.7242813110352,
+            "PrivateMiB": 2901.609375,
+            "WorkingSetMiB": 2932.91015625,
+            "GcCommittedMiB": 1138.21484375,
+            "FragmentedMiB": 137.24684143066406
+          },
+          "Frames": 590095
+        }
+      ],
+      "MemoryBeforeCollection": {
+        "ManagedMiB": 683.5492553710938,
+        "PrivateMiB": 2952.515625,
+        "WorkingSetMiB": 2983.73828125,
+        "GcCommittedMiB": 1138.21484375,
+        "FragmentedMiB": 137.24684143066406
+      },
+      "MemoryAfterCollection": {
+        "ManagedMiB": 589.2802810668945,
+        "PrivateMiB": 2950.8828125,
+        "WorkingSetMiB": 2982.23828125,
+        "GcCommittedMiB": 1136.53515625,
+        "FragmentedMiB": 135.97437286376953
+      },
+      "Error": null
+    }
+  ],
+  "Errors": []
+}

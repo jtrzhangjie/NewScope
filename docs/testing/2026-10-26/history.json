@@ -1,0 +1,383 @@
+{
+  "StartedUtc": "2026-10-26T03:33:39.6416869+00:00",
+  "FinishedUtc": "2026-10-26T03:34:12.0517596+00:00",
+  "Options": {
+    "Root": "E:\\NewScope",
+    "Output": "E:\\NewScope\\dist\\stress\\final\\history.json",
+    "Channels": [
+      32,
+      128,
+      256,
+      512
+    ],
+    "DurationSeconds": 0,
+    "Frames": 120,
+    "UiOnly": false
+  },
+  "ProcessorCount": 32,
+  "Framework": ".NET 10.0.12",
+  "OS": "Microsoft Windows 10.0.26300",
+  "UiHashes": {
+    "src/NewScope/App.axaml": "18074294B0DBF1766BEBBD82B2999542CB14F00D31CEB2C046B7FA9DA5E61955",
+    "src/NewScope/Views/MainWindow.axaml": "53C4C673229993597CC9C460CE71D988683F105BFBBC7FA26028FC7D3E77F930",
+    "src/NewScope/Services/Localization.cs": "36B42C2BE368855C30498F4AF1A37C45581B4B426371CD9780315750ECC9F9EF",
+    "src/NewScope/Assets/newscope.ico": "130FF6E1721210BCF2EA46D0300820D2941166D96089D8F16BD39D4CDBFADE34",
+    "src/NewScope/Assets/newscope.png": "4D2175D83BFCCC8C4CB4C4A001A727C32E92C43D68E3A023F3D40C510F899616"
+  },
+  "UiUnchanged": true,
+  "Results": [
+    {
+      "Kind": "history-render",
+      "Channels": 32,
+      "Panes": 1,
+      "SamplesPerChannel": 120000,
+      "TotalSamples": 3840000,
+      "RetentionSeconds": 60,
+      "FillSeconds": 0.0455342,
+      "Memory": {
+        "ManagedMiB": 65.99755859375,
+        "PrivateMiB": 167.97265625,
+        "WorkingSetMiB": 219.86328125,
+        "GcCommittedMiB": 112.16015625,
+        "FragmentedMiB": 36.18785095214844
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 0.2469,
+        "P95Ms": 0.2567,
+        "MaxMs": 0.2872
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 8.4849,
+        "P95Ms": 27.1724,
+        "MaxMs": 46.2876
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.1154,
+        "P95Ms": 0.3136,
+        "MaxMs": 1.2435
+      }
+    },
+    {
+      "Kind": "history-render",
+      "Channels": 32,
+      "Panes": 4,
+      "SamplesPerChannel": 120000,
+      "TotalSamples": 3840000,
+      "RetentionSeconds": 60,
+      "FillSeconds": 0.0455342,
+      "Memory": {
+        "ManagedMiB": 65.99755859375,
+        "PrivateMiB": 167.97265625,
+        "WorkingSetMiB": 219.86328125,
+        "GcCommittedMiB": 112.16015625,
+        "FragmentedMiB": 36.18785095214844
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 0.2469,
+        "P95Ms": 0.2567,
+        "MaxMs": 0.2872
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 5.9463,
+        "P95Ms": 24.8087,
+        "MaxMs": 44.8559
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.1127,
+        "P95Ms": 0.2581,
+        "MaxMs": 27.7474
+      }
+    },
+    {
+      "Kind": "snapshot-export",
+      "Channels": 32,
+      "SnapshotMs": 13.814,
+      "MemoryBefore": {
+        "ManagedMiB": 65.99755859375,
+        "PrivateMiB": 167.97265625,
+        "WorkingSetMiB": 219.86328125,
+        "GcCommittedMiB": 112.16015625,
+        "FragmentedMiB": 36.18785095214844
+      },
+      "MemoryWithSnapshot": {
+        "ManagedMiB": 168.7523422241211,
+        "PrivateMiB": 273.51953125,
+        "WorkingSetMiB": 330.20703125,
+        "GcCommittedMiB": 175.46484375,
+        "FragmentedMiB": 33.790260314941406
+      },
+      "CancelMs": 20.8025
+    },
+    {
+      "Kind": "history-render",
+      "Channels": 128,
+      "Panes": 1,
+      "SamplesPerChannel": 120000,
+      "TotalSamples": 15360000,
+      "RetentionSeconds": 60,
+      "FillSeconds": 0.1836469,
+      "Memory": {
+        "ManagedMiB": 251.40776824951172,
+        "PrivateMiB": 494.81640625,
+        "WorkingSetMiB": 548.59765625,
+        "GcCommittedMiB": 428.37890625,
+        "FragmentedMiB": 119.02212524414062
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 0.3531,
+        "P95Ms": 0.5043,
+        "MaxMs": 0.6446
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 15.2846,
+        "P95Ms": 89.5492,
+        "MaxMs": 114.1163
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.0296,
+        "P95Ms": 0.1965,
+        "MaxMs": 0.7836
+      }
+    },
+    {
+      "Kind": "history-render",
+      "Channels": 128,
+      "Panes": 4,
+      "SamplesPerChannel": 120000,
+      "TotalSamples": 15360000,
+      "RetentionSeconds": 60,
+      "FillSeconds": 0.1836469,
+      "Memory": {
+        "ManagedMiB": 251.40776824951172,
+        "PrivateMiB": 494.81640625,
+        "WorkingSetMiB": 548.59765625,
+        "GcCommittedMiB": 428.37890625,
+        "FragmentedMiB": 119.02212524414062
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 0.3531,
+        "P95Ms": 0.5043,
+        "MaxMs": 0.6446
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 15.3937,
+        "P95Ms": 83.1499,
+        "MaxMs": 102.6185
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.0903,
+        "P95Ms": 0.284,
+        "MaxMs": 0.7859
+      }
+    },
+    {
+      "Kind": "snapshot-export",
+      "Channels": 128,
+      "SnapshotMs": 56.3655,
+      "MemoryBefore": {
+        "ManagedMiB": 251.40776824951172,
+        "PrivateMiB": 494.81640625,
+        "WorkingSetMiB": 548.59765625,
+        "GcCommittedMiB": 428.37890625,
+        "FragmentedMiB": 119.02212524414062
+      },
+      "MemoryWithSnapshot": {
+        "ManagedMiB": 521.4489822387695,
+        "PrivateMiB": 684.28515625,
+        "WorkingSetMiB": 739.62109375,
+        "GcCommittedMiB": 442.8671875,
+        "FragmentedMiB": 116.62161254882812
+      },
+      "CancelMs": 41.6157
+    },
+    {
+      "Kind": "history-render",
+      "Channels": 256,
+      "Panes": 1,
+      "SamplesPerChannel": 120000,
+      "TotalSamples": 30720000,
+      "RetentionSeconds": 60,
+      "FillSeconds": 0.3532491,
+      "Memory": {
+        "ManagedMiB": 497.0199890136719,
+        "PrivateMiB": 763.06640625,
+        "WorkingSetMiB": 819.19921875,
+        "GcCommittedMiB": 696.44921875,
+        "FragmentedMiB": 145.58836364746094
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 1.1503,
+        "P95Ms": 1.2013,
+        "MaxMs": 1.2208
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 28.7754,
+        "P95Ms": 124.772,
+        "MaxMs": 202.9612
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.0787,
+        "P95Ms": 0.8813,
+        "MaxMs": 1.7455
+      }
+    },
+    {
+      "Kind": "history-render",
+      "Channels": 256,
+      "Panes": 4,
+      "SamplesPerChannel": 120000,
+      "TotalSamples": 30720000,
+      "RetentionSeconds": 60,
+      "FillSeconds": 0.3532491,
+      "Memory": {
+        "ManagedMiB": 497.0199890136719,
+        "PrivateMiB": 763.06640625,
+        "WorkingSetMiB": 819.19921875,
+        "GcCommittedMiB": 696.44921875,
+        "FragmentedMiB": 145.58836364746094
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 1.1503,
+        "P95Ms": 1.2013,
+        "MaxMs": 1.2208
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 26.1569,
+        "P95Ms": 126.8572,
+        "MaxMs": 152.0899
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.1301,
+        "P95Ms": 0.8693,
+        "MaxMs": 1.4578
+      }
+    },
+    {
+      "Kind": "snapshot-export",
+      "Channels": 256,
+      "SnapshotMs": 116.0292,
+      "MemoryBefore": {
+        "ManagedMiB": 497.0199890136719,
+        "PrivateMiB": 763.06640625,
+        "WorkingSetMiB": 819.19921875,
+        "GcCommittedMiB": 696.44921875,
+        "FragmentedMiB": 145.58836364746094
+      },
+      "MemoryWithSnapshot": {
+        "ManagedMiB": 1034.9669036865234,
+        "PrivateMiB": 1217,
+        "WorkingSetMiB": 1269.94140625,
+        "GcCommittedMiB": 711.45703125,
+        "FragmentedMiB": 142.9528350830078
+      },
+      "CancelMs": 103.5911
+    },
+    {
+      "Kind": "history-render",
+      "Channels": 512,
+      "Panes": 1,
+      "SamplesPerChannel": 61680,
+      "TotalSamples": 31580160,
+      "RetentionSeconds": 30.84,
+      "FillSeconds": 0.246805,
+      "Memory": {
+        "ManagedMiB": 511.34019470214844,
+        "PrivateMiB": 1114.3984375,
+        "WorkingSetMiB": 1169.74609375,
+        "GcCommittedMiB": 1049.55859375,
+        "FragmentedMiB": 123.22743225097656
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 1.0791,
+        "P95Ms": 1.2359,
+        "MaxMs": 1.2372
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 35.9816,
+        "P95Ms": 135.9025,
+        "MaxMs": 169.1302
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.1256,
+        "P95Ms": 1.1864,
+        "MaxMs": 1.8732
+      }
+    },
+    {
+      "Kind": "history-render",
+      "Channels": 512,
+      "Panes": 4,
+      "SamplesPerChannel": 61680,
+      "TotalSamples": 31580160,
+      "RetentionSeconds": 30.84,
+      "FillSeconds": 0.246805,
+      "Memory": {
+        "ManagedMiB": 511.34019470214844,
+        "PrivateMiB": 1114.3984375,
+        "WorkingSetMiB": 1169.74609375,
+        "GcCommittedMiB": 1049.55859375,
+        "FragmentedMiB": 123.22743225097656
+      },
+      "StatsAllChannels": {
+        "Count": 20,
+        "P50Ms": 1.0791,
+        "P95Ms": 1.2359,
+        "MaxMs": 1.2372
+      },
+      "Render": {
+        "Count": 120,
+        "P50Ms": 31.8723,
+        "P95Ms": 142.4286,
+        "MaxMs": 198.8228
+      },
+      "Interaction": {
+        "Count": 120,
+        "P50Ms": 0.1784,
+        "P95Ms": 1.5136,
+        "MaxMs": 1.9831
+      }
+    },
+    {
+      "Kind": "snapshot-export",
+      "Channels": 512,
+      "SnapshotMs": 63.6306,
+      "MemoryBefore": {
+        "ManagedMiB": 511.34019470214844,
+        "PrivateMiB": 1114.3984375,
+        "WorkingSetMiB": 1169.74609375,
+        "GcCommittedMiB": 1049.55859375,
+        "FragmentedMiB": 123.22743225097656
+      },
+      "MemoryWithSnapshot": {
+        "ManagedMiB": 1044.4788055419922,
+        "PrivateMiB": 1243.421875,
+        "WorkingSetMiB": 1297.5078125,
+        "GcCommittedMiB": 1078.3359375,
+        "FragmentedMiB": 120.50086975097656
+      },
+      "CancelMs": 100.2484
+    }
+  ],
+  "Errors": []
+}

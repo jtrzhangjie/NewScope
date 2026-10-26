@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/TestResults/
+.vs/
+.idea/
+dist/
+*.user
+*.suo
+NUL
+__pycache__/
+*.py[cod]
+*.tmp
+.DS_Store

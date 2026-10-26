@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing stable version tag, for example v1.0.4"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.event.inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: windows-latest
+    env:
+      RELEASE_TAG: ${{ github.event.inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.tag || github.ref }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Validate tag, source and release notes
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          if ($env:RELEASE_TAG -notmatch '^v\d+\.\d+\.\d+$') { throw "A stable vX.Y.Z tag is required." }
+          $tagCommit = git rev-parse --verify "refs/tags/$env:RELEASE_TAG^{commit}"
+          if ($LASTEXITCODE -ne 0) { throw "Tag does not exist." }
+          $headCommit = git rev-parse HEAD
+          if ($headCommit -ne $tagCommit) { throw "Checkout does not match tag." }
+          $version = dotnet msbuild src/NewScope/NewScope.csproj -nologo -getProperty:Version
+          if ($LASTEXITCODE -ne 0 -or "v$($version.Trim())" -ne $env:RELEASE_TAG) { throw "Tag must match project Version." }
+          if (-not (Test-Path "docs/releases/$env:RELEASE_TAG.md")) { throw "Version release notes are missing." }
+      - name: Install NSIS
+        shell: pwsh
+        run: |
+          choco install nsis --version=3.11 -y --no-progress
+          if ($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne 3010) { throw "NSIS installation failed." }
+      - name: Restore, build, test and package
+        shell: pwsh
+        run: ./tools/verify.ps1
+      - name: Preserve build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: NewScope-${{ env.RELEASE_TAG }}-win-x64
+          path: |
+            dist/NewScope-Setup-win-x64.exe
+            dist/NewScope-Portable-win-x64.zip
+            dist/SHA256SUMS.txt
+            dist/symbols/*.zip
+          if-no-files-found: error
+      - name: Upload assets and publish Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $assets = @("dist/NewScope-Setup-win-x64.exe", "dist/NewScope-Portable-win-x64.zip", "dist/SHA256SUMS.txt")
+          $assets += @(Get-ChildItem dist/symbols -Filter *.zip | ForEach-Object FullName)
+          $arguments = @("release", "create", $env:RELEASE_TAG, "--verify-tag", "--draft", "--title", "NewScope $env:RELEASE_TAG", "--notes-file", "docs/releases/$env:RELEASE_TAG.md") + $assets
+          gh @arguments
+          if ($LASTEXITCODE -ne 0) { throw "Draft release or asset upload failed." }
+          gh release edit $env:RELEASE_TAG --draft=false --latest
+          if ($LASTEXITCODE -ne 0) { throw "Release publication failed." }
+          "## NewScope $env:RELEASE_TAG`n`n[Release](https://github.com/$env:GH_REPO/releases/tag/$env:RELEASE_TAG)`n`n[Installer](https://github.com/$env:GH_REPO/releases/latest/download/NewScope-Setup-win-x64.exe)" >> $env:GITHUB_STEP_SUMMARY

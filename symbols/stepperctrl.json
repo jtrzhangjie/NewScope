@@ -1,0 +1,2060 @@
+{
+  "format": "newscope-symbols-v1",
+  "elf": "stepperctrl.axf",
+  "generatedAt": "2026-10-20T08:57:57.432281+00:00",
+  "ramStart": 268435456,
+  "ramSize": 4096,
+  "variableCount": 256,
+  "duplicatesSkipped": 0,
+  "anonymousMembersSkipped": 0,
+  "variables": [
+    {
+      "name": "lin_configured_NAD",
+      "address": 268437694,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_rx_queue.queue_header",
+      "address": 268437716,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_rx_queue.queue_tail",
+      "address": 268437718,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_rx_queue.queue_status",
+      "address": 268437720,
+      "size": 1,
+      "type": "ld_queue_status",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_rx_queue.queue_current_size",
+      "address": 268437722,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_rx_queue.queue_max_size",
+      "address": 268437724,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_tx_queue.queue_header",
+      "address": 268437732,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_tx_queue.queue_tail",
+      "address": 268437734,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_tx_queue.queue_status",
+      "address": 268437736,
+      "size": 1,
+      "type": "ld_queue_status",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_tx_queue.queue_current_size",
+      "address": 268437738,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_tl_tx_queue.queue_max_size",
+      "address": 268437740,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "pid",
+      "address": 268438006,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "state",
+      "address": 268438007,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_service_status",
+      "address": 268438008,
+      "size": 1,
+      "type": "lin_service_status",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "func.sinx",
+      "address": 268438016,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "sTick",
+      "address": 268438016,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "func.cosx",
+      "address": 268438018,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "ABD_list_index",
+      "address": 268438022,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "ADSamp.Vdc",
+      "address": 268438024,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "ADSamp.Mvss0",
+      "address": 268438026,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "ADSamp.Mvss1",
+      "address": 268438028,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "ADSamp.Temp",
+      "address": 268438030,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "ADSamp.TempTrim",
+      "address": 268438032,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "ADSamp.TempFilt",
+      "address": 268438034,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "AnalogTrim.trim25",
+      "address": 268438036,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "AnalogTrim.trim150",
+      "address": 268438040,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "AnalogTrim.trim_40",
+      "address": 268438044,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.CarrierCntSet",
+      "address": 268438048,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.DeltaAngle",
+      "address": 268438050,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.VdcFilt",
+      "address": 268438052,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.VoltRef",
+      "address": 268438056,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.pwmUpdate",
+      "address": 268438060,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.PhAVoltOut",
+      "address": 268438064,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.PhBVoltOut",
+      "address": 268438068,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.PhAVoltOutDuty",
+      "address": 268438072,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.PhBVoltOutDuty",
+      "address": 268438074,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.Mvss0OffsetLPFDelay",
+      "address": 268438076,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.Mvss1OffsetLPFDelay",
+      "address": 268438080,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.Mvss0OffsetValue",
+      "address": 268438084,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.Mvss1OffsetValue",
+      "address": 268438086,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.OffsetCnt",
+      "address": 268438088,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.Angle",
+      "address": 268438090,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.direction",
+      "address": 268438092,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.sector",
+      "address": 268438093,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.sectorCopy",
+      "address": 268438094,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.ACVoltOutflg",
+      "address": 268438095,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.OffsetFlg",
+      "address": 268438096,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "Commut.OvrModulFlg",
+      "address": 268438097,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.phAcurr",
+      "address": 268438100,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.phBcurr",
+      "address": 268438102,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.ABSMvss0",
+      "address": 268438104,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.ABSMvss1",
+      "address": 268438106,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.CurrIsSet",
+      "address": 268438108,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.CurrIsFbLPFPara",
+      "address": 268438110,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.CurrIsFb",
+      "address": 268438112,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.CurrIsFbLPF",
+      "address": 268438114,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.CurrIsLPFDelay",
+      "address": 268438116,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.Kp",
+      "address": 268438120,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.Ki",
+      "address": 268438122,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.IntegSum",
+      "address": 268438124,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.OutMax",
+      "address": 268438128,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.OutMin",
+      "address": 268438132,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.OutputTemp",
+      "address": 268438136,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.OutVref",
+      "address": 268438140,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.InputError",
+      "address": 268438144,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.CurrLoopflg",
+      "address": 268438146,
+      "size": 1,
+      "type": "int8_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "CurrLoop.CurrLoopdelay",
+      "address": 268438147,
+      "size": 1,
+      "type": "int8_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "HW_ID",
+      "address": 268438148,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "index",
+      "address": 268438149,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.since",
+      "address": 268438150,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.bad_since",
+      "address": 268438152,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.sample_stamp",
+      "address": 268438154,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.current",
+      "address": 268438156,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.q_lpf",
+      "address": 268438158,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.u_lpf",
+      "address": 268438160,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.state",
+      "address": 268438162,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.reason",
+      "address": 268438163,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.flags",
+      "address": 268438164,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqAuto.first_rise_reason",
+      "address": 268438165,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqClock500us",
+      "address": 268438166,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqIrqTiming.fault_list",
+      "address": 268438168,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqIrqTiming.pwm_write_max_ticks",
+      "address": 268438172,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqIrqTiming.pwm_total_max_ticks",
+      "address": 268438174,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqIrqTiming.pwm_over_period",
+      "address": 268438176,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqIrqTiming.write_over_half",
+      "address": 268438177,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqIrqTiming.ready",
+      "address": 268438178,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqIrqTiming.version",
+      "address": 268438179,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.observation.id_lpf",
+      "address": 268438180,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.observation.iq_lpf",
+      "address": 268438182,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.observation.iq_ratio_q12",
+      "address": 268438184,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.observation.pairs",
+      "address": 268438188,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.observation.raw_valid",
+      "address": 268438192,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.observation.valid",
+      "address": 268438193,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.observation.reason",
+      "address": 268438194,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.requested_current",
+      "address": 268438196,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.measured_current",
+      "address": 268438198,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.voltage",
+      "address": 268438200,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.delta",
+      "address": 268438202,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.direction",
+      "address": 268438204,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.stage",
+      "address": 268438205,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.ready",
+      "address": 268438206,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.version",
+      "address": 268438207,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.wait_tasks",
+      "address": 268438208,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLite.reject_bits",
+      "address": 268438209,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.written",
+      "address": 268438212,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.loaded",
+      "address": 268438216,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.tag[0]",
+      "address": 268438220,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.tag[1]",
+      "address": 268438224,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.raw[0]",
+      "address": 268438228,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.raw[1]",
+      "address": 268438230,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.epoch",
+      "address": 268438232,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.mask",
+      "address": 268438236,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "IqLiteMailbox.state",
+      "address": 268438237,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "SW_ID",
+      "address": 268438240,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "Variant_ID",
+      "address": 268438241,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "adcTempCoeff.ah[0]",
+      "address": 268438244,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "adcTempCoeff.al[0]",
+      "address": 268438248,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "adcTempCoeff.bh[0]",
+      "address": 268438252,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "adcTempCoeff.bl[0]",
+      "address": 268438256,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "asyscfgIrqCallback.num",
+      "address": 268438260,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "auto_addr_selected",
+      "address": 268438284,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "breakframe_risingflag",
+      "address": 268438285,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "cur_th_st3",
+      "address": 268438294,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "cur_th_st4",
+      "address": 268438296,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "current_id",
+      "address": 268438298,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diag_number_of_services",
+      "address": 268438299,
+      "size": 1,
+      "type": "unsigned char",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.faultList",
+      "address": 268438300,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.plTick1ms",
+      "address": 268438304,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.uvTick1ms",
+      "address": 268438306,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.ovTick1ms",
+      "address": 268438308,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.uvovWaitTick1ms",
+      "address": 268438310,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.uvovWaitTarget1ms",
+      "address": 268438312,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.otTick1ms",
+      "address": 268438314,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "diagnostic.uvovWaitFaultBit",
+      "address": 268438316,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "emergencyRunStopRequested",
+      "address": 268438329,
+      "size": 1,
+      "type": "_Bool",
+      "signed": false,
+      "kind": "bool"
+    },
+    {
+      "name": "frame_timeout_cnt",
+      "address": 268438332,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gBaudRateDeteceFirstFrameFlg",
+      "address": 268438334,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gBaudRateDeteceFlag",
+      "address": 268438335,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gBaudRateSave",
+      "address": 268438336,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gFirstFrameByteIndex",
+      "address": 268438340,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gFramePID",
+      "address": 268438341,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gRisingEdgeCnt",
+      "address": 268438342,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "g_sys_cfgs.cur_th_st12",
+      "address": 268438344,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "g_sys_cfgs.cur_th_st34",
+      "address": 268438348,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "g_sys_cfgs.original_nad",
+      "address": 268438376,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "g_sys_cfgs.crc",
+      "address": 268438380,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gctrlState",
+      "address": 268438384,
+      "size": 1,
+      "type": "state_machine_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[0]",
+      "address": 268438400,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[1]",
+      "address": 268438402,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[2]",
+      "address": 268438404,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[3]",
+      "address": 268438406,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[4]",
+      "address": 268438408,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[5]",
+      "address": 268438410,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[6]",
+      "address": 268438412,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "idle_timeout_cnt",
+      "address": 268438412,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "gtrimadcbuff[7]",
+      "address": 268438414,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "inital_value",
+      "address": 268438414,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "l_status.byte",
+      "address": 268438416,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lastProgrammingDataSave",
+      "address": 268438417,
+      "size": 1,
+      "type": "data_save_e",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "leavel_autoaddress",
+      "address": 268438418,
+      "size": 1,
+      "type": "_Bool",
+      "signed": false,
+      "kind": "bool"
+    },
+    {
+      "name": "lin_aa_ctrl",
+      "address": 268438420,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_aa_state",
+      "address": 268438422,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_aa_tick",
+      "address": 268438424,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_cfg_frame_num",
+      "address": 268438426,
+      "size": 1,
+      "type": "unsigned char",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_error_in_response",
+      "address": 268438436,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_goto_sleep_flg",
+      "address": 268438445,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "txdone_flag",
+      "address": 268438456,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_num_of_frms",
+      "address": 268438457,
+      "size": 1,
+      "type": "unsigned char",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "u32adc_trig",
+      "address": 268438460,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_save_configuration_flg",
+      "address": 268438464,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_successful_transfer",
+      "address": 268438465,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "lin_word_status.word",
+      "address": 268438466,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "max_idle_timeout",
+      "address": 268438468,
+      "size": 2,
+      "type": "unsigned short",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "max_queue_size",
+      "address": 268438470,
+      "size": 2,
+      "type": "unsigned short",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "n_max_timeout_cnt",
+      "address": 268438472,
+      "size": 2,
+      "type": "unsigned short",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "newnadgetflag",
+      "address": 268438474,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "res_frame_timeout_cnt",
+      "address": 268438480,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "single_pci_len",
+      "address": 268438488,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "snpd_step",
+      "address": 268438530,
+      "size": 1,
+      "type": "SNPD_STEP",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "step1_value",
+      "address": 268438532,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "step2_value",
+      "address": 268438534,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SpeedAngle[0]",
+      "address": 268438536,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SpeedAngle[1]",
+      "address": 268438538,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SpeedAngle[2]",
+      "address": 268438540,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SpeedAngle[3]",
+      "address": 268438542,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SpeedAngle[4]",
+      "address": 268438544,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SpeedAngle[5]",
+      "address": 268438546,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.IntegCoeffValue",
+      "address": 268438548,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.DeceAngle",
+      "address": 268438552,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.DeltAgleDelay",
+      "address": 268438556,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.CurveAmpValue",
+      "address": 268438558,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.TargetSpeed",
+      "address": 268438560,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.TargetSpeedCpy",
+      "address": 268438562,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.CurrSpeed",
+      "address": 268438564,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SpeedErr",
+      "address": 268438566,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.StateTick",
+      "address": 268438568,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.VbusLPFDelay",
+      "address": 268438572,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.TempLPFDelay",
+      "address": 268438576,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.MVSS0ABSLPFDelay",
+      "address": 268438580,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.MVSS1ABSLPFDelay",
+      "address": 268438584,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.MVSS0ABSfilt",
+      "address": 268438588,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.MVSS1ABSfilt",
+      "address": 268438590,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.LinPosSet",
+      "address": 268438592,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.LinCurrPos",
+      "address": 268438594,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.NumError",
+      "address": 268438596,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.PosSet",
+      "address": 268438600,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.PosSetCpy",
+      "address": 268438604,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.TargetPos",
+      "address": 268438608,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.CurrentPos",
+      "address": 268438612,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.DecePos",
+      "address": 268438616,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.PosErr",
+      "address": 268438620,
+      "size": 4,
+      "type": "uint32_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.AngErr",
+      "address": 268438624,
+      "size": 4,
+      "type": "int32_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.FGAngle",
+      "address": 268438628,
+      "size": 2,
+      "type": "int16_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.AccDecTick",
+      "address": 268438630,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.SCurveCnt",
+      "address": 268438632,
+      "size": 1,
+      "type": "int8_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.servoOn",
+      "address": 268438633,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.strtFlg",
+      "address": 268438634,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.cnstSpeedflg",
+      "address": 268438635,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.speedLevel",
+      "address": 268438636,
+      "size": 1,
+      "type": "speed_level_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.linspdLvl",
+      "address": 268438637,
+      "size": 1,
+      "type": "speed_level_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.stallEnable",
+      "address": 268438638,
+      "size": 1,
+      "type": "lock_rotor_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.PosDir",
+      "address": 268438639,
+      "size": 1,
+      "type": "pos_direct_t",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.posValidFlg",
+      "address": 268438640,
+      "size": 1,
+      "type": "pos_valid",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.direction",
+      "address": 268438641,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.EmgRunflg",
+      "address": 268438642,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.EmgEnFlg",
+      "address": 268438643,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.EmgRunPos",
+      "address": 268438644,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.ClearResetflg",
+      "address": 268438645,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.dataSaveFlg",
+      "address": 268438646,
+      "size": 1,
+      "type": "data_save_e",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.coilHoldState",
+      "address": 268438647,
+      "size": 1,
+      "type": "coil_power_list",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.coilStateinHold",
+      "address": 268438648,
+      "size": 1,
+      "type": "coil_power_list",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "steppCtrl.CtrlMode",
+      "address": 268438649,
+      "size": 1,
+      "type": "stop_mode_type",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "stepp_uvov_resume_pending",
+      "address": 268438652,
+      "size": 1,
+      "type": "_Bool",
+      "signed": false,
+      "kind": "bool"
+    },
+    {
+      "name": "tick_1msInterruptFlag",
+      "address": 268438653,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tick_count500us",
+      "address": 268438654,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "timer_cnt",
+      "address": 268438656,
+      "size": 1,
+      "type": "uint8_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "timer_cpture_cnt[0]",
+      "address": 268438658,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "timer_cpture_cnt[1]",
+      "address": 268438660,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "timer_cpture_cnt[2]",
+      "address": 268438662,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "timer_cpture_cnt[3]",
+      "address": 268438664,
+      "size": 2,
+      "type": "uint16_t",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_check_timeout",
+      "address": 268438666,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_check_timeout_type",
+      "address": 268438668,
+      "size": 1,
+      "type": "lin_message_timeout_type",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "tl_diag_state",
+      "address": 268438669,
+      "size": 1,
+      "type": "lin_diagnostic_state",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "tl_frame_counter",
+      "address": 268438670,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_last_RSID",
+      "address": 268438671,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_last_cfg_result",
+      "address": 268438672,
+      "size": 1,
+      "type": "lin_last_cfg_result",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "tl_ld_error_code",
+      "address": 268438673,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_no_of_pdu",
+      "address": 268438674,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_receive_msg_status",
+      "address": 268438675,
+      "size": 1,
+      "type": "lin_message_status",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "tl_rx_msg_index",
+      "address": 268438676,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_rx_msg_size",
+      "address": 268438678,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_rx_msg_status",
+      "address": 268438680,
+      "size": 1,
+      "type": "lin_message_status",
+      "signed": true,
+      "kind": "int"
+    },
+    {
+      "name": "tl_slaveresp_cnt",
+      "address": 268438713,
+      "size": 1,
+      "type": "l_u8",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_tx_msg_index",
+      "address": 268438714,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_tx_msg_size",
+      "address": 268438716,
+      "size": 2,
+      "type": "l_u16",
+      "signed": false,
+      "kind": "int"
+    },
+    {
+      "name": "tl_tx_msg_status",
+      "address": 268438718,
+      "size": 1,
+      "type": "lin_message_status",
+      "signed": true,
+      "kind": "int"
+    }
+  ]
+}

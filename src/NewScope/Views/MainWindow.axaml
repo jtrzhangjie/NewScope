@@ -1,0 +1,549 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:NewScope.ViewModels"
+        xmlns:controls="using:NewScope.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="1480"
+        d:DesignHeight="900"
+        x:Class="NewScope.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/newscope.ico"
+        Title="{DynamicResource AppTitle}"
+        Width="1480"
+        Height="900"
+        MinWidth="1120"
+        MinHeight="700"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="Window_KeyDown">
+
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="64,2,50,Auto,*,30">
+        <!-- Header -->
+        <Border Grid.Row="0" Background="{DynamicResource HeaderBrush}" Padding="18,0">
+            <Grid ColumnDefinitions="Auto,24,*,Auto">
+                <Border Width="34" Height="34" CornerRadius="9" Background="{DynamicResource BadgeBackgroundBrush}"
+                        BorderBrush="{DynamicResource BadgeBorderBrush}" BorderThickness="1"
+                        VerticalAlignment="Center">
+                    <Path Data="M3,17 L8,17 L11,7 L15,25 L19,12 L22,17 L29,17"
+                          Stroke="{DynamicResource AccentBrush}" StrokeThickness="2"
+                          StrokeLineCap="Round"
+                          Stretch="Uniform" Width="22" Height="22" />
+                </Border>
+
+                <StackPanel Grid.Column="2" VerticalAlignment="Center" Spacing="1">
+                    <StackPanel Orientation="Horizontal" Spacing="9">
+                        <TextBlock Text="NewScope" FontSize="18" FontWeight="Bold" LetterSpacing="0.2" />
+                        <Border Classes="chip" VerticalAlignment="Center" Padding="6,2">
+                            <TextBlock Text="{Binding VersionLabel}" FontSize="9.5" Foreground="{DynamicResource AccentBrush}" />
+                        </Border>
+                    </StackPanel>
+                    <TextBlock Text="{DynamicResource AppSubtitle}" Classes="dim" FontSize="9.5" LetterSpacing="1.5" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <Border Classes="chip" Width="82" MinHeight="32" Padding="0" Margin="0,0,4,0">
+                        <StackPanel Orientation="Horizontal" Spacing="7" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Ellipse Width="7" Height="7" Fill="{Binding StatusBrush}" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding ConnectionBadge}" FontSize="10" FontWeight="SemiBold"
+                                       Foreground="{Binding StatusBrush}" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+
+                    <Button Content="{DynamicResource Connect}" Classes="primary" Width="96"
+                            Command="{Binding ConnectCommand}"
+                            IsVisible="{Binding CanConnect}" />
+                    <Button Content="{Binding RunButtonText}" Width="96"
+                            Command="{Binding ToggleRunCommand}"
+                            IsEnabled="{Binding CanToggleRun}"
+                            IsVisible="{Binding CanDisconnect}" />
+                    <Panel Width="104">
+                        <Button Content="{Binding RunButtonText}" HorizontalAlignment="Stretch"
+                                IsVisible="{Binding !CanDisconnect}" IsEnabled="False" />
+                        <Button Content="{DynamicResource Disconnect}" Classes="danger" HorizontalAlignment="Stretch"
+                                Command="{Binding DisconnectCommand}"
+                                IsVisible="{Binding CanDisconnect}" />
+                    </Panel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="{DynamicResource AccentLineBrush}" />
+
+        <!-- Toolbar -->
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto" Margin="18,0">
+            <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                        <TextBlock x:Name="RateLabel" Text="{DynamicResource RatePerChannel}" Classes="sectionTitle" VerticalAlignment="Center" Margin="0,0,2,0"
+                                   ToolTip.Tip="{DynamicResource RateTooltip}" />
+                        <ComboBox ItemsSource="{Binding SampleRates}" SelectedItem="{Binding SelectedSampleRate}"
+                                  ToolTip.Tip="{DynamicResource RateComboTooltip}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:RateOption">
+                            <TextBlock Text="{Binding Label}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock x:Name="WindowLabel" Text="{DynamicResource Window}" Classes="sectionTitle" VerticalAlignment="Center" Margin="10,0,2,0" />
+                <ComboBox ItemsSource="{Binding WindowOptions}" SelectedItem="{Binding SelectedWindow}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:WindowOption">
+                            <TextBlock Text="{Binding Label}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <Border Width="1" Height="22" Background="{DynamicResource BorderBrush}" Margin="6,0" />
+
+                <ToggleButton Content="{DynamicResource Follow}" IsChecked="{Binding AutoFollow, Mode=TwoWay}" />
+                <Button Content="{DynamicResource Fit}" Click="Fit_Click" />
+                <Button Content="{DynamicResource Clear}" Command="{Binding ClearDataCommand}" />
+                <Button Content="{DynamicResource ExportCsv}" Click="Export_Click" />
+
+                <Border Width="1" Height="22" Background="{DynamicResource BorderBrush}" Margin="6,0" />
+
+                <TextBlock x:Name="PanesLabel" Text="{DynamicResource Panes}" Classes="sectionTitle" VerticalAlignment="Center" Margin="8,0,2,0" />
+                <ComboBox Width="68" MinWidth="68" ItemsSource="{Binding PaneCountOptions}"
+                          SelectedItem="{Binding SelectedPaneCount}" SelectionChanged="PaneCount_Changed"
+                          HorizontalContentAlignment="Center"
+                          ToolTip.Tip="{DynamicResource PaneCountTooltip}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:PaneCountOption">
+                            <TextBlock Text="{Binding Label}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock x:Name="TargetPaneLabel" Text="{DynamicResource Target}" Classes="sectionTitle" VerticalAlignment="Center" Margin="8,0,2,0" />
+                <ComboBox Width="68" MinWidth="68" ItemsSource="{Binding VisiblePaneOptions}"
+                          SelectedItem="{Binding SelectedPane}"
+                          HorizontalContentAlignment="Center"
+                          ToolTip.Tip="{DynamicResource TargetPaneTooltip}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:PaneOption">
+                            <TextBlock Text="{Binding Label}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock x:Name="SwdLabel" Text="SWD" Classes="sectionTitle" VerticalAlignment="Center" Margin="8,0,2,0" />
+                <ComboBox Width="104" MinWidth="104" ItemsSource="{Binding JLinkSpeedOptions}"
+                          SelectedItem="{Binding SelectedSpeed}" IsEnabled="{Binding CanConnect}"
+                          HorizontalContentAlignment="Center"
+                          ToolTip.Tip="{DynamicResource SwdTooltip}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:SpeedOption">
+                            <TextBlock Text="{Binding Label}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                <Button Content="{DynamicResource Diagnostics}" Click="Diagnostics_Click"
+                        Width="52" Padding="0" HorizontalContentAlignment="Center"
+                        ToolTip.Tip="{DynamicResource DiagnosticsTooltip}" />
+                <Button Content="{Binding LanguageLabel}" Command="{Binding ToggleLanguageCommand}"
+                        Width="44" Padding="0" HorizontalContentAlignment="Center"
+                        ToolTip.Tip="{DynamicResource LanguageTooltip}" />
+                <ToggleButton Content="{Binding ThemeLabel}" IsChecked="{Binding IsLightTheme, Mode=TwoWay}"
+                              Width="52" Padding="0" HorizontalContentAlignment="Center"
+                              ToolTip.Tip="{DynamicResource ThemeTooltip}" />
+                <Border x:Name="SelectedCountChip" Classes="chip" MinHeight="32">
+                    <TextBlock Text="{Binding SelectedCountText}" FontSize="10" Foreground="{DynamicResource TextMutedBrush}"
+                               VerticalAlignment="Center" />
+                </Border>
+                <Button Classes="chip" MinHeight="32" Padding="8,0"
+                        ToolTip.Tip="{DynamicResource JLinkDeviceTooltip}">
+                    <Button.Flyout>
+                        <Flyout Placement="Bottom">
+                            <StackPanel Width="260" Spacing="8">
+                                <TextBlock Text="{DynamicResource JLinkDeviceLabel}" Classes="sectionTitle" FontSize="9" />
+                                <ComboBox IsEditable="True"
+                                          Text="{Binding JLinkDevice, Mode=TwoWay}"
+                                          ItemsSource="{Binding JLinkDeviceOptions}"
+                                          IsEnabled="{Binding CanConnect}"
+                                          PlaceholderText="Cortex-M0" />
+                                <TextBlock Text="{DynamicResource JLinkDeviceHint}" Classes="dim"
+                                           FontSize="9.5" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                    <TextBlock Text="{Binding TargetSummary}" FontSize="10" Foreground="{DynamicResource TextMutedBrush}"
+                               VerticalAlignment="Center" />
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Error banner -->
+        <Border Grid.Row="3" IsVisible="{Binding HasError}"
+                Margin="18,0,18,8" Padding="12,9" CornerRadius="7"
+                Background="{DynamicResource ErrorBackgroundBrush}" BorderBrush="{DynamicResource ErrorBorderBrush}" BorderThickness="1">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <TextBlock Text="!" FontWeight="Bold" Foreground="{DynamicResource DangerBrush}" Margin="0,0,9,0" />
+                <TextBlock Grid.Column="1" Text="{Binding ErrorMessage}" Foreground="{DynamicResource ErrorTextBrush}"
+                           TextWrapping="Wrap" FontSize="11.5" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="4">
+                    <Button Content="{DynamicResource Retry}" Classes="primary" Padding="8,2" MinHeight="24"
+                            Command="{Binding RetryConnectionCommand}"
+                            IsVisible="{Binding ConnectionRetryAvailable}"
+                            ToolTip.Tip="{DynamicResource RetryConnectionTooltip}" />
+                    <Button Content="{DynamicResource Dismiss}" Classes="ghost" Padding="8,2" MinHeight="24"
+                            Command="{Binding DismissErrorCommand}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Workspace -->
+        <Grid Grid.Row="4" x:Name="Workspace" ColumnDefinitions="286,5,*,5,390" Margin="18,0,18,12">
+            <!-- Variable picker -->
+            <Border Grid.Column="0" Classes="panel" Padding="12">
+                <Grid RowDefinitions="Auto,Auto,Auto,*,Auto">
+                    <Grid ColumnDefinitions="*,Auto,Auto">
+                        <TextBlock Text="{DynamicResource Variables}" Classes="sectionTitle" VerticalAlignment="Center" />
+                        <Button Grid.Column="1" Content="{DynamicResource Import}" Classes="ghost" Padding="7,2" MinHeight="24"
+                                FontSize="9.5" Click="ImportSymbols_Click"
+                                IsEnabled="{Binding CanImportSymbols}"
+                                ToolTip.Tip="{DynamicResource ImportTooltip}" />
+                        <TextBlock Grid.Column="2" Text="{Binding SymbolCountText}" Classes="dim" FontSize="10"
+                                   Margin="8,0,0,0" VerticalAlignment="Center" />
+                    </Grid>
+
+                    <TextBox Grid.Row="1" Text="{Binding SearchText}" PlaceholderText="{DynamicResource SearchPlaceholder}"
+                             Margin="0,10,0,8" />
+
+                    <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="0,0,0,6">
+                        <CheckBox Content="{DynamicResource SelectedOnly}" IsChecked="{Binding ShowSelectedOnly}"
+                                  FontSize="11" Foreground="{DynamicResource TextMutedBrush}" />
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2">
+                            <Button Content="{DynamicResource All}" Classes="ghost" Padding="7,2" MinHeight="24"
+                                    Command="{Binding SelectAllVisibleCommand}"
+                                    ToolTip.Tip="{DynamicResource SelectAllTooltip}" />
+                            <Button Content="{DynamicResource None}" Classes="ghost" Padding="7,2" MinHeight="24"
+                                    Command="{Binding ClearSelectionCommand}" />
+                        </StackPanel>
+                    </Grid>
+
+                    <TreeView Grid.Row="3" ItemsSource="{Binding FilteredVariables}"
+                              Background="Transparent" BorderThickness="0"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <TreeView.Styles>
+                            <Style Selector="TreeViewItem" x:DataType="vm:VariableNode">
+                                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                                <Setter Property="MinHeight" Value="0" />
+                            </Style>
+                            <Style Selector="TreeViewItem /template/ ToggleButton#PART_Expander">
+                                <Setter Property="IsVisible" Value="False" />
+                            </Style>
+                        </TreeView.Styles>
+                        <TreeView.ItemTemplate>
+                            <TreeDataTemplate x:DataType="vm:VariableNode" ItemsSource="{Binding Children}">
+                                <Grid ColumnDefinitions="24,4,*,Auto" Margin="2,5,7,5"
+                                      ToolTip.Tip="{Binding Tooltip}">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding IsSelected}"
+                                              IsVisible="{Binding IsLeaf}" VerticalAlignment="Center"
+                                              Padding="0" HorizontalAlignment="Left" />
+                                    <Border Grid.Column="1" Width="3" Height="25" CornerRadius="2"
+                                            Background="{Binding AccentBrush}" IsVisible="{Binding IsLeaf}"
+                                            VerticalAlignment="Center" />
+                                    <StackPanel Grid.Column="2" Spacing="1" Margin="7,0,8,0"
+                                                IsVisible="{Binding IsLeaf}">
+                                        <TextBlock Text="{Binding Name}" FontSize="11.5" FontWeight="SemiBold"
+                                                   TextTrimming="CharacterEllipsis" />
+                                        <TextBlock Text="{Binding TypeText}" Classes="dim" FontSize="9.5"
+                                                   TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="3" Text="{Binding AddressText}" Classes="mono dim"
+                                               FontSize="9" VerticalAlignment="Center"
+                                               IsVisible="{Binding IsLeaf}" />
+                                    <Button Grid.Column="3" Content="{Binding GroupSelectionGlyph}" Classes="ghost"
+                                            Command="{Binding ToggleGroupSelectionCommand}"
+                                            IsVisible="{Binding IsGroup}" Width="22" Height="24" Padding="0"
+                                            FontSize="11" VerticalAlignment="Center"
+                                            Foreground="{DynamicResource AccentBrush}"
+                                            ToolTip.Tip="{Binding GroupSelectionTooltip}" />
+                                    <Button Grid.Column="0" Content="{Binding Glyph}" Classes="ghost"
+                                            Command="{Binding ToggleExpandCommand}" IsVisible="{Binding IsGroup}"
+                                            Width="20" Height="24" Padding="0" FontSize="13"
+                                            Foreground="{DynamicResource TextMutedBrush}"
+                                            VerticalAlignment="Center" />
+                                    <Border Grid.Column="1" Width="3" Height="25" CornerRadius="2"
+                                            Background="{DynamicResource AccentBrush}" Opacity="0.4"
+                                            IsVisible="{Binding IsGroup}" VerticalAlignment="Center" />
+                                    <StackPanel Grid.Column="2" Spacing="1" Margin="7,0,8,0"
+                                                IsVisible="{Binding IsGroup}">
+                                        <TextBlock Text="{Binding Name}" FontSize="11.5" FontWeight="SemiBold"
+                                                   TextTrimming="CharacterEllipsis" />
+                                        <TextBlock Text="{Binding CountText}" Classes="dim" FontSize="9.5" />
+                                    </StackPanel>
+                                </Grid>
+                            </TreeDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+
+                    <Grid Grid.Row="4" ColumnDefinitions="*,Auto" Margin="0,9,0,0">
+                        <TextBlock Text="{Binding SymbolFileText}" Classes="dim" FontSize="9.5"
+                                   TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                        <TextBlock Grid.Column="1" Text="{Binding SelectedCountText}" Classes="dim" FontSize="9.5"
+                                   VerticalAlignment="Center" />
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="1" ResizeDirection="Columns" />
+
+            <!-- Plot -->
+            <Border Grid.Column="2" x:Name="CenterPanel" Classes="panel" Padding="0" ClipToBounds="True">
+                <Grid RowDefinitions="50,*">
+                    <Grid ColumnDefinitions="*,Auto" Margin="14,0,14,0">
+                        <StackPanel VerticalAlignment="Center" Spacing="1">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Text="{DynamicResource Waveform}" Classes="sectionTitle" VerticalAlignment="Center" />
+                                <Border Classes="chip" Padding="6,2" VerticalAlignment="Center">
+                                    <TextBlock Text="{DynamicResource RelativeTime}" FontSize="8.5" Foreground="{DynamicResource TextDimBrush}" />
+                                </Border>
+                            </StackPanel>
+                            <TextBlock Text="{DynamicResource WaveHint}"
+                                       Classes="dim" FontSize="9.5" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="7" VerticalAlignment="Center">
+                            <Border Classes="chip" ToolTip.Tip="{DynamicResource VisibleSpanTooltip}">
+                                <TextBlock Text="{Binding ViewSpanText, ElementName=Plot}" FontSize="9.5"
+                                           Foreground="{DynamicResource TextMutedBrush}" />
+                            </Border>
+                            <Border Classes="chip">
+                                <TextBlock Text="{Binding ActualRateText}" FontSize="9.5"
+                                           Foreground="{DynamicResource TextMutedBrush}" />
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="1" x:Name="PlotArea" RowDefinitions="*,0,0,0,0,0,0">
+                        <Grid Grid.Row="0">
+                            <controls:WaveformPlot x:Name="Plot"
+                                                   Channels="{Binding PrimaryChannels}"
+                                                   WindowSeconds="{Binding WindowSeconds}"
+                                                   AutoFollow="{Binding AutoFollow, Mode=TwoWay}" />
+                            <Border Classes="chip" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Margin="12,7,0,0" IsHitTestVisible="False"
+                                    ToolTip.Tip="{DynamicResource YModeTooltip}">
+                                <TextBlock Text="{Binding YModeText, ElementName=Plot}" FontSize="8.5"
+                                           Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                            <Border Classes="chip" HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Margin="0,7,12,0" IsVisible="{Binding ShowTwoPanes}"
+                                    IsHitTestVisible="False">
+                                <TextBlock Text="{DynamicResource PaneA}" FontSize="8.5" Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                        </Grid>
+
+                        <GridSplitter Grid.Row="1" x:Name="PlotSplitter" Height="6"
+                                      IsVisible="False" ResizeDirection="Rows"
+                                      Background="{DynamicResource BorderSoftBrush}" />
+
+                        <Grid Grid.Row="2" IsVisible="{Binding ShowTwoPanes}">
+                            <controls:WaveformPlot x:Name="PlotB"
+                                                   Channels="{Binding PaneBChannels}"
+                                                   WindowSeconds="{Binding WindowSeconds}"
+                                                   AutoFollow="{Binding AutoFollow, Mode=TwoWay}" />
+                            <Border Classes="chip" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Margin="12,7,0,0" IsHitTestVisible="False"
+                                    ToolTip.Tip="{DynamicResource YModeTooltip}">
+                                <TextBlock Text="{Binding YModeText, ElementName=PlotB}" FontSize="8.5"
+                                           Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                            <Border Classes="chip" HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Margin="0,7,12,0" IsHitTestVisible="False">
+                                <TextBlock Text="{DynamicResource PaneB}" FontSize="8.5" Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                        </Grid>
+
+                        <GridSplitter Grid.Row="3" x:Name="PlotSplitterC" Height="6"
+                                      IsVisible="False" ResizeDirection="Rows"
+                                      Background="{DynamicResource BorderSoftBrush}" />
+
+                        <Grid Grid.Row="4" IsVisible="{Binding ShowPaneC}">
+                            <controls:WaveformPlot x:Name="PlotC"
+                                                   Channels="{Binding PaneCChannels}"
+                                                   WindowSeconds="{Binding WindowSeconds}"
+                                                   AutoFollow="{Binding AutoFollow, Mode=TwoWay}" />
+                            <Border Classes="chip" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Margin="12,7,0,0" IsHitTestVisible="False"
+                                    ToolTip.Tip="{DynamicResource YModeTooltip}">
+                                <TextBlock Text="{Binding YModeText, ElementName=PlotC}" FontSize="8.5"
+                                           Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                            <Border Classes="chip" HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Margin="0,7,12,0" IsHitTestVisible="False">
+                                <TextBlock Text="{DynamicResource PaneC}" FontSize="8.5" Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                        </Grid>
+
+                        <GridSplitter Grid.Row="5" x:Name="PlotSplitterD" Height="6"
+                                      IsVisible="False" ResizeDirection="Rows"
+                                      Background="{DynamicResource BorderSoftBrush}" />
+
+                        <Grid Grid.Row="6" IsVisible="{Binding ShowPaneD}">
+                            <controls:WaveformPlot x:Name="PlotD"
+                                                   Channels="{Binding PaneDChannels}"
+                                                   WindowSeconds="{Binding WindowSeconds}"
+                                                   AutoFollow="{Binding AutoFollow, Mode=TwoWay}" />
+                            <Border Classes="chip" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Margin="12,7,0,0" IsHitTestVisible="False"
+                                    ToolTip.Tip="{DynamicResource YModeTooltip}">
+                                <TextBlock Text="{Binding YModeText, ElementName=PlotD}" FontSize="8.5"
+                                           Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                            <Border Classes="chip" HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Margin="0,7,12,0" IsHitTestVisible="False">
+                                <TextBlock Text="{DynamicResource PaneD}" FontSize="8.5" Foreground="{DynamicResource AccentBrush}" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="3" ResizeDirection="Columns" />
+
+            <!-- Watch table -->
+            <Border Grid.Column="4" x:Name="RightPanel" Classes="panel" Padding="12">
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,9">
+                        <TextBlock Text="{DynamicResource Watch}" Classes="sectionTitle" VerticalAlignment="Center" />
+                        <TextBlock Grid.Column="1" Text="{Binding SelectedCountText}" Classes="dim" FontSize="10"
+                                   VerticalAlignment="Center" />
+                    </Grid>
+
+                    <Grid Grid.Row="1" RowDefinitions="Auto,*" Margin="0,0,4,0">
+                        <Grid ColumnDefinitions="28,26,*,54,44,44,44" Height="28">
+                            <TextBlock Text="{DynamicResource WatchOn}" Classes="sectionTitle" FontSize="9"
+                                       VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="1" Text="P" Classes="sectionTitle" FontSize="9"
+                                       VerticalAlignment="Center" ToolTip.Tip="{DynamicResource WatchPaneTooltip}" />
+                            <TextBlock Grid.Column="2" Text="{DynamicResource WatchSignal}" Classes="sectionTitle" FontSize="9"
+                                       VerticalAlignment="Center" Margin="3,0,0,0" />
+                            <TextBlock Grid.Column="3" Text="{DynamicResource WatchCurrent}" Classes="sectionTitle" FontSize="9"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="4" Text="{DynamicResource WatchMin}" Classes="sectionTitle" FontSize="9"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="5" Text="{DynamicResource WatchMax}" Classes="sectionTitle" FontSize="9"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="6" Text="{DynamicResource WatchAvg}" Classes="sectionTitle" FontSize="9"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center" />
+                        </Grid>
+
+                        <ListBox Grid.Row="1" ItemsSource="{Binding Channels}"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <ListBox.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:ChannelViewModel">
+                                        <Border BorderBrush="{DynamicResource BorderSoftBrush}"
+                                                BorderThickness="0,1,0,0" Padding="0,6" Height="45">
+                                            <Grid ColumnDefinitions="28,26,*,54,44,44,44" ToolTip.Tip="{Binding Tooltip}">
+                                                <CheckBox IsChecked="{Binding IsVisible}"
+                                                          VerticalAlignment="Center"
+                                                          ToolTip.Tip="{DynamicResource ShowHideTooltip}" />
+                                                <Button Grid.Column="1" Classes="paneBadge"
+                                                        Content="{Binding PaneLabel}"
+                                                        Command="{Binding MovePaneCommand}"
+                                                        ToolTip.Tip="{DynamicResource MovePaneTooltip}" />
+
+                                                <Grid Grid.Column="2" ColumnDefinitions="Auto,*" Margin="3,0,5,0">
+                                                    <Border Width="3" Height="24" CornerRadius="2"
+                                                            Background="{Binding ColorBrush}" Margin="0,0,7,0"
+                                                            VerticalAlignment="Center" />
+                                                    <StackPanel Grid.Column="1" Spacing="0" VerticalAlignment="Center">
+                                                        <TextBlock Text="{Binding Name}" FontSize="10.5"
+                                                                   FontWeight="SemiBold"
+                                                                   TextTrimming="CharacterEllipsis" />
+                                                        <TextBlock Text="{Binding AddressText}" Classes="mono dim"
+                                                                   FontSize="8" TextTrimming="CharacterEllipsis" />
+                                                    </StackPanel>
+                                                </Grid>
+
+                                                <TextBlock Grid.Column="3" Text="{Binding ValueText}" Classes="mono"
+                                                           HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                           FontSize="9.5" TextTrimming="CharacterEllipsis" />
+                                                <TextBlock Grid.Column="4" Text="{Binding MinText}" Classes="mono dim"
+                                                           HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                           FontSize="9" TextTrimming="CharacterEllipsis" />
+                                                <TextBlock Grid.Column="5" Text="{Binding MaxText}" Classes="mono dim"
+                                                           HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                           FontSize="9" TextTrimming="CharacterEllipsis" />
+                                                <TextBlock Grid.Column="6" Text="{Binding AvgText}" Classes="mono dim"
+                                                           HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                           FontSize="9" TextTrimming="CharacterEllipsis" />
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+
+                    <Border Grid.Row="2" BorderBrush="{DynamicResource BorderSoftBrush}" BorderThickness="0,1,0,0"
+                            Margin="0,8,0,0" Padding="0,8,0,0">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <TextBlock Text="{DynamicResource WatchHint}"
+                                       Classes="dim" FontSize="9.5" VerticalAlignment="Center" />
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding MemoryGuardText}" IsVisible="{Binding MemoryGuardActive}"
+                                           Classes="dim" FontSize="8.5" Foreground="{DynamicResource AccentBrush}"
+                                           ToolTip.Tip="{DynamicResource MemoryGuardTooltip}" />
+                                <TextBlock Text="{DynamicResource LiveMemory}" Classes="dim"
+                                           FontSize="8.5" LetterSpacing="0.8" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Status bar -->
+        <Border Grid.Row="5" Background="{DynamicResource StatusBarBrush}" BorderBrush="{DynamicResource BorderSoftBrush}"
+                BorderThickness="0,1,0,0" Padding="18,0">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <Ellipse Width="6" Height="6" Fill="{Binding StatusBrush}" />
+                    <TextBlock Text="{Binding StatusText}" FontSize="10.5" Foreground="{DynamicResource TextMutedBrush}"
+                               VerticalAlignment="Center" />
+                </StackPanel>
+
+                <Panel Grid.Column="1" Margin="18,0" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding ConnectionDetail}" Classes="dim" FontSize="10"
+                               TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                    <Border IsVisible="{Binding IsExporting}" Background="{DynamicResource StatusBarBrush}">
+                        <Grid ColumnDefinitions="Auto,110,Auto" ColumnSpacing="10" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding ExportStatusText}" Classes="dim" FontSize="10"
+                                       VerticalAlignment="Center" />
+                            <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Height="4"
+                                         Value="{Binding ExportProgress}" VerticalAlignment="Center" />
+                            <Button Grid.Column="2" Content="{DynamicResource Cancel}" Classes="ghost"
+                                    Padding="7,1" MinHeight="22" FontSize="9.5"
+                                    Command="{Binding CancelExportCommand}" />
+                        </Grid>
+                    </Border>
+                </Panel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="14" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding SymbolFileText}" Classes="dim" FontSize="9.5" />
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <TextBlock Text="{DynamicResource Samples}" Classes="dim" FontSize="9.5" />
+                        <TextBlock Text="{Binding SampleCountText}" Classes="dim mono" FontSize="9.5" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <TextBlock Text="T" Classes="dim" FontSize="9.5" />
+                        <TextBlock Text="{Binding ElapsedText}" Classes="dim mono" FontSize="9.5" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <TextBlock Text="{DynamicResource Rate}" Classes="dim" FontSize="9.5" />
+                        <TextBlock Text="{Binding ActualRateText}" Classes="dim mono" FontSize="9.5" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

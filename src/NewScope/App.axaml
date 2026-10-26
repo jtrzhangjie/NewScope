@@ -1,0 +1,493 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="NewScope.App"
+             xmlns:local="using:NewScope">
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="AppBackgroundBrush" Color="#080C11" />
+                    <SolidColorBrush x:Key="PanelBrush" Color="#0C131A" />
+                    <SolidColorBrush x:Key="PanelRaisedBrush" Color="#101923" />
+                    <SolidColorBrush x:Key="SurfaceBrush" Color="#111B25" />
+                    <SolidColorBrush x:Key="SurfaceHoverBrush" Color="#172634" />
+                    <SolidColorBrush x:Key="InputBrush" Color="#0A1118" />
+                    <SolidColorBrush x:Key="BorderBrush" Color="#1E2C3A" />
+                    <SolidColorBrush x:Key="InputBorderBrush" Color="#2C3E4E" />
+                    <SolidColorBrush x:Key="BorderSoftBrush" Color="#16232E" />
+                    <SolidColorBrush x:Key="TextBrush" Color="#E6EEF7" />
+                    <SolidColorBrush x:Key="TextMutedBrush" Color="#8A9CAF" />
+                    <SolidColorBrush x:Key="TextDimBrush" Color="#5E7288" />
+                    <SolidColorBrush x:Key="AccentBrush" Color="#4DD0E1" />
+                    <SolidColorBrush x:Key="AccentDeepBrush" Color="#12333D" />
+                    <SolidColorBrush x:Key="GreenBrush" Color="#7ED957" />
+                    <SolidColorBrush x:Key="DangerBrush" Color="#FF5C5C" />
+                    <SolidColorBrush x:Key="WarningBrush" Color="#FFCA28" />
+                    <SolidColorBrush x:Key="HoverBorderBrush" Color="#2A4054" />
+                    <SolidColorBrush x:Key="PressedBrush" Color="#0E1B25" />
+                    <SolidColorBrush x:Key="PrimaryTextBrush" Color="#041014" />
+                    <SolidColorBrush x:Key="PrimaryHoverBrush" Color="#78E5F2" />
+                    <SolidColorBrush x:Key="AccentBorderBrush" Color="#2E6E7A" />
+                    <SolidColorBrush x:Key="BadgeBackgroundBrush" Color="#102631" />
+                    <SolidColorBrush x:Key="BadgeBorderBrush" Color="#28505C" />
+                    <SolidColorBrush x:Key="ErrorBackgroundBrush" Color="#241016" />
+                    <SolidColorBrush x:Key="ErrorBorderBrush" Color="#5A2730" />
+                    <SolidColorBrush x:Key="ErrorTextBrush" Color="#FFB4B4" />
+                    <SolidColorBrush x:Key="ListHoverBrush" Color="#0F1B25" />
+                    <SolidColorBrush x:Key="ListSelectedBrush" Color="#11232D" />
+                    <SolidColorBrush x:Key="RowHoverBrush" Color="#0E1922" />
+                    <SolidColorBrush x:Key="RowSelectedBrush" Color="#10232D" />
+                    <SolidColorBrush x:Key="TooltipBrush" Color="#111C27" />
+                    <SolidColorBrush x:Key="StatusBarBrush" Color="#070B0F" />
+                    <SolidColorBrush x:Key="GridHeaderBrush" Color="#0A1118" />
+                    <SolidColorBrush x:Key="ScrollThumbBrush" Color="#33465A" />
+                    <SolidColorBrush x:Key="ScrollThumbHoverBrush" Color="#4A637A" />
+                    <SolidColorBrush x:Key="ScrollThumbPressedBrush" Color="#5D788F" />
+                    <LinearGradientBrush x:Key="HeaderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Color="#101C27" Offset="0" />
+                        <GradientStop Color="#0C141C" Offset="0.55" />
+                        <GradientStop Color="#0A1017" Offset="1" />
+                    </LinearGradientBrush>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="AppBackgroundBrush" Color="#F4F7FA" />
+                    <SolidColorBrush x:Key="PanelBrush" Color="#FFFFFF" />
+                    <SolidColorBrush x:Key="PanelRaisedBrush" Color="#F8FAFC" />
+                    <SolidColorBrush x:Key="SurfaceBrush" Color="#F1F5F9" />
+                    <SolidColorBrush x:Key="SurfaceHoverBrush" Color="#E2E8F0" />
+                    <SolidColorBrush x:Key="InputBrush" Color="#FFFFFF" />
+                    <SolidColorBrush x:Key="BorderBrush" Color="#CBD5E1" />
+                    <SolidColorBrush x:Key="InputBorderBrush" Color="#B3C4D1" />
+                    <SolidColorBrush x:Key="BorderSoftBrush" Color="#E2E8F0" />
+                    <SolidColorBrush x:Key="TextBrush" Color="#0F172A" />
+                    <SolidColorBrush x:Key="TextMutedBrush" Color="#475569" />
+                    <SolidColorBrush x:Key="TextDimBrush" Color="#64748B" />
+                    <SolidColorBrush x:Key="AccentBrush" Color="#0891B2" />
+                    <SolidColorBrush x:Key="AccentDeepBrush" Color="#CFFAFE" />
+                    <SolidColorBrush x:Key="GreenBrush" Color="#16A34A" />
+                    <SolidColorBrush x:Key="DangerBrush" Color="#DC2626" />
+                    <SolidColorBrush x:Key="WarningBrush" Color="#D97706" />
+                    <SolidColorBrush x:Key="HoverBorderBrush" Color="#94A3B8" />
+                    <SolidColorBrush x:Key="PressedBrush" Color="#E2E8F0" />
+                    <SolidColorBrush x:Key="PrimaryTextBrush" Color="#FFFFFF" />
+                    <SolidColorBrush x:Key="PrimaryHoverBrush" Color="#06B6D4" />
+                    <SolidColorBrush x:Key="AccentBorderBrush" Color="#22D3EE" />
+                    <SolidColorBrush x:Key="BadgeBackgroundBrush" Color="#ECFEFF" />
+                    <SolidColorBrush x:Key="BadgeBorderBrush" Color="#A5F3FC" />
+                    <SolidColorBrush x:Key="ErrorBackgroundBrush" Color="#FFF1F2" />
+                    <SolidColorBrush x:Key="ErrorBorderBrush" Color="#FECDD3" />
+                    <SolidColorBrush x:Key="ErrorTextBrush" Color="#9F1239" />
+                    <SolidColorBrush x:Key="ListHoverBrush" Color="#F1F5F9" />
+                    <SolidColorBrush x:Key="ListSelectedBrush" Color="#E0F2FE" />
+                    <SolidColorBrush x:Key="RowHoverBrush" Color="#F8FAFC" />
+                    <SolidColorBrush x:Key="RowSelectedBrush" Color="#E0F2FE" />
+                    <SolidColorBrush x:Key="TooltipBrush" Color="#FFFFFF" />
+                    <SolidColorBrush x:Key="StatusBarBrush" Color="#EEF2F6" />
+                    <SolidColorBrush x:Key="GridHeaderBrush" Color="#F8FAFC" />
+                    <SolidColorBrush x:Key="ScrollThumbBrush" Color="#C3D0DC" />
+                    <SolidColorBrush x:Key="ScrollThumbHoverBrush" Color="#A6B7C6" />
+                    <SolidColorBrush x:Key="ScrollThumbPressedBrush" Color="#8DA2B4" />
+                    <LinearGradientBrush x:Key="HeaderBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Color="#FFFFFF" Offset="0" />
+                        <GradientStop Color="#F8FAFC" Offset="0.55" />
+                        <GradientStop Color="#F1F5F9" Offset="1" />
+                    </LinearGradientBrush>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <LinearGradientBrush x:Key="AccentLineBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+                <GradientStop Color="#004DD0E1" Offset="0" />
+                <GradientStop Color="#B34DD0E1" Offset="0.28" />
+                <GradientStop Color="#337ED957" Offset="1" />
+            </LinearGradientBrush>
+            <FontFamily x:Key="UiFont">Segoe UI Variable Text, Segoe UI</FontFamily>
+            <FontFamily x:Key="MonoFont">Cascadia Mono, Consolas, Courier New</FontFamily>
+        </ResourceDictionary>
+    </Application.Resources>
+
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+
+        <Style Selector="Window">
+            <Setter Property="Background" Value="{DynamicResource AppBackgroundBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            <Setter Property="FontFamily" Value="{DynamicResource UiFont}" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+
+        <Style Selector="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        </Style>
+
+        <Style Selector="TextBlock.muted">
+            <Setter Property="Foreground" Value="{DynamicResource TextMutedBrush}" />
+        </Style>
+
+        <Style Selector="TextBlock.dim">
+            <Setter Property="Foreground" Value="{DynamicResource TextDimBrush}" />
+        </Style>
+
+        <Style Selector="TextBlock.mono">
+            <Setter Property="FontFamily" Value="{DynamicResource MonoFont}" />
+        </Style>
+
+        <Style Selector="TextBlock.sectionTitle">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="LetterSpacing" Value="0.4" />
+            <Setter Property="Foreground" Value="{DynamicResource TextMutedBrush}" />
+        </Style>
+
+        <Style Selector="Border.panel">
+            <Setter Property="Background" Value="{DynamicResource PanelBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderSoftBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+
+        <Style Selector="Border.chip">
+            <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="7,3" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="Button">
+            <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="12,6" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="MinHeight" Value="32" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="Button:pointerover">
+            <Setter Property="Background" Value="{DynamicResource SurfaceHoverBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}" />
+        </Style>
+
+        <Style Selector="Button:pressed">
+            <Setter Property="Background" Value="{DynamicResource PressedBrush}" />
+        </Style>
+
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHoverBrush}" />
+        </Style>
+
+        <Style Selector="Button.primary:pointerover">
+            <Setter Property="Background" Value="{DynamicResource PrimaryHoverBrush}" />
+        </Style>
+
+        <Style Selector="Button.ghost">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Foreground" Value="{DynamicResource TextMutedBrush}" />
+        </Style>
+
+        <Style Selector="Button.paneBadge">
+            <Setter Property="Background" Value="{DynamicResource BadgeBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BadgeBorderBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource AccentBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Width" Value="21" />
+            <Setter Property="Height" Value="21" />
+            <Setter Property="MinHeight" Value="21" />
+            <Setter Property="FontSize" Value="9" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="Button.paneBadge:pointerover">
+            <Setter Property="Background" Value="{DynamicResource AccentDeepBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentBorderBrush}" />
+        </Style>
+
+        <Style Selector="Button.ghost:pointerover">
+            <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        </Style>
+
+        <Style Selector="Button.danger">
+            <Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+        </Style>
+
+        <Style Selector="Button.danger:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ErrorBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
+        </Style>
+
+        <Style Selector="ToggleButton">
+            <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextMutedBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="11,6" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="MinHeight" Value="32" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="ToggleButton:pointerover">
+            <Setter Property="Background" Value="{DynamicResource SurfaceHoverBrush}" />
+        </Style>
+
+        <Style Selector="ToggleButton:checked">
+            <Setter Property="Background" Value="{DynamicResource AccentDeepBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentBorderBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource AccentBrush}" />
+        </Style>
+
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="{DynamicResource InputBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="9,7" />
+            <Setter Property="FontSize" Value="12.5" />
+            <Setter Property="MinHeight" Value="34" />
+        </Style>
+
+        <Style Selector="TextBox:focus">
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentBorderBrush}" />
+        </Style>
+
+        <Style Selector="ComboBox">
+            <Setter Property="Background" Value="{DynamicResource InputBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="8,5" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="MinHeight" Value="32" />
+            <Setter Property="MinWidth" Value="92" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="ComboBox:pointerover">
+            <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}" />
+        </Style>
+
+        <Style Selector="ComboBoxItem">
+            <Setter Property="Padding" Value="10,7" />
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+
+        <Style Selector="ListBox">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style Selector="ListBoxItem">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0,1,0,1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+
+        <Style Selector="ListBoxItem:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ListHoverBrush}" />
+        </Style>
+
+        <Style Selector="ListBoxItem:selected">
+            <Setter Property="Background" Value="{DynamicResource ListSelectedBrush}" />
+        </Style>
+
+        <Style Selector="CheckBox">
+            <Setter Property="MinWidth" Value="18" />
+            <Setter Property="Padding" Value="0,0,7,0" />
+        </Style>
+
+        <Style Selector="DataGrid">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="RowBackground" Value="Transparent" />
+            <Setter Property="GridLinesVisibility" Value="Horizontal" />
+            <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource BorderSoftBrush}" />
+            <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
+            <Setter Property="HeadersVisibility" Value="Column" />
+            <Setter Property="CanUserResizeColumns" Value="True" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="SelectionMode" Value="Single" />
+        </Style>
+
+        <Style Selector="DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource GridHeaderBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextDimBrush}" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="8,7" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderSoftBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+        </Style>
+
+        <Style Selector="DataGridRow">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="MinHeight" Value="30" />
+        </Style>
+
+        <Style Selector="DataGridRow:pointerover">
+            <Setter Property="Background" Value="{DynamicResource RowHoverBrush}" />
+        </Style>
+
+        <Style Selector="DataGridRow:selected">
+            <Setter Property="Background" Value="{DynamicResource RowSelectedBrush}" />
+        </Style>
+
+        <Style Selector="DataGridCell">
+            <Setter Property="Padding" Value="7,4" />
+            <Setter Property="FontSize" Value="11.5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="GridSplitter">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Width" Value="5" />
+        </Style>
+
+        <Style Selector="ScrollBar">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="MinWidth" Value="10" />
+            <Setter Property="MinHeight" Value="10" />
+        </Style>
+
+        <Style Selector="ScrollBar:vertical">
+            <Setter Property="Width" Value="10" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <Track Name="PART_Track"
+                               Minimum="{TemplateBinding Minimum}"
+                               Maximum="{TemplateBinding Maximum}"
+                               Value="{TemplateBinding Value, Mode=TwoWay}"
+                               ViewportSize="{TemplateBinding ViewportSize}"
+                               Orientation="{TemplateBinding Orientation}"
+                               IsDirectionReversed="True">
+                            <Track.DecreaseButton>
+                                <RepeatButton Focusable="False">
+                                    <RepeatButton.Template>
+                                        <ControlTemplate><Border Background="Transparent" /></ControlTemplate>
+                                    </RepeatButton.Template>
+                                </RepeatButton>
+                            </Track.DecreaseButton>
+                            <Track.IncreaseButton>
+                                <RepeatButton Focusable="False">
+                                    <RepeatButton.Template>
+                                        <ControlTemplate><Border Background="Transparent" /></ControlTemplate>
+                                    </RepeatButton.Template>
+                                </RepeatButton>
+                            </Track.IncreaseButton>
+                            <Thumb MinHeight="30" Width="8" HorizontalAlignment="Center"
+                                   Background="{DynamicResource ScrollThumbBrush}" CornerRadius="3">
+                                <Thumb.Template>
+                                    <ControlTemplate>
+                                        <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="{TemplateBinding CornerRadius}" />
+                                    </ControlTemplate>
+                                </Thumb.Template>
+                            </Thumb>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="ScrollBar:horizontal">
+            <Setter Property="Height" Value="10" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <Track Name="PART_Track"
+                               Minimum="{TemplateBinding Minimum}"
+                               Maximum="{TemplateBinding Maximum}"
+                               Value="{TemplateBinding Value, Mode=TwoWay}"
+                               ViewportSize="{TemplateBinding ViewportSize}"
+                               Orientation="{TemplateBinding Orientation}">
+                            <Track.DecreaseButton>
+                                <RepeatButton Focusable="False">
+                                    <RepeatButton.Template>
+                                        <ControlTemplate><Border Background="Transparent" /></ControlTemplate>
+                                    </RepeatButton.Template>
+                                </RepeatButton>
+                            </Track.DecreaseButton>
+                            <Track.IncreaseButton>
+                                <RepeatButton Focusable="False">
+                                    <RepeatButton.Template>
+                                        <ControlTemplate><Border Background="Transparent" /></ControlTemplate>
+                                    </RepeatButton.Template>
+                                </RepeatButton>
+                            </Track.IncreaseButton>
+                            <Thumb MinWidth="30" Height="8" VerticalAlignment="Center"
+                                   Background="{DynamicResource ScrollThumbBrush}" CornerRadius="3">
+                                <Thumb.Template>
+                                    <ControlTemplate>
+                                        <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="{TemplateBinding CornerRadius}" />
+                                    </ControlTemplate>
+                                </Thumb.Template>
+                            </Thumb>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="ScrollBar:pointerover /template/ Thumb">
+            <Setter Property="Background" Value="{DynamicResource ScrollThumbHoverBrush}" />
+        </Style>
+
+        <Style Selector="ScrollBar /template/ Thumb:pressed">
+            <Setter Property="Background" Value="{DynamicResource ScrollThumbPressedBrush}" />
+        </Style>
+
+        <Style Selector="ToolTip">
+            <Setter Property="Background" Value="{DynamicResource TooltipBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="8,6" />
+            <Setter Property="FontSize" Value="11.5" />
+        </Style>
+    </Application.Styles>
+</Application>

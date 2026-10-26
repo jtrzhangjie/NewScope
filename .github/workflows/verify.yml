@@ -1,0 +1,21 @@
+name: Verify
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Build, test and publish
+        shell: pwsh
+        run: ./tools/verify.ps1 -SkipPackage
